@@ -26,7 +26,7 @@
            (map clojure.java.io/reader)
            (map line-seq)
            flatten
-           (remove nil?)
+           (remove nil?) ; for empty files
            (map (fn [line] (.length line)))
            frequencies
            (sort-by first)
@@ -44,7 +44,6 @@
                           :let [lines (->> file
                                            clojure.java.io/reader
                                            line-seq
-                                           (remove nil?)
                                            (map #(filter-big-lines % (Integer. max-size)))
                                            (remove nil?))]
                           :when (not (empty? lines))]
