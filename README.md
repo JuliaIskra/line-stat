@@ -1,9 +1,9 @@
-##Lines size analyzer in Java code
+## Lines size analyzer in Java code
 
-###How to build
+### How to build
 `lein uberjar`
 
-###How to use
+### How to use
 To get stat on lines sizes:
 
 `java -jar target\uberjar\line-stat-*-standalone.jar stat path/to/java/project`
